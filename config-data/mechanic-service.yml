@@ -9,3 +9,8 @@ spring:
 
   application:
     name: mechanic-service
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone:  http://localhost:8087/eureka/       

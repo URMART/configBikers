@@ -43,3 +43,7 @@ resilience4j.circuitbreaker:
       waitDurationInOpenState: 5s
       failureRateThreshold: 50
       eventConsumerBufferSize: 10
+eureka:
+  client:
+    serviceUrl:
+      defaultZone:  http://localhost:8087/eureka/      
