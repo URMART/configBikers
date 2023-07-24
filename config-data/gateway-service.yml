@@ -17,7 +17,7 @@ spring:
         - id: mechanic-service
           uri: lb://mechanic-service
           predicates:
-            - Path=/api/mechanic/v1/**
+            - Path=/api/app/v1/**
         - id: app-service
           uri: lb://app-service
           predicates:
@@ -25,4 +25,4 @@ spring:
         - id: brand-service
           uri: lb://brand-service
           predicates:
-            - Path=/api/brand/v1/**
+            - Path=/api/app/v1/**
