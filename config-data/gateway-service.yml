@@ -18,11 +18,11 @@ spring:
           uri: lb://mechanic-service
           predicates:
             - Path=/api/app/v1/mechanic/**
-        - id: app-service
-          uri: lb://app-service
-          predicates:
-            - Path=/api/app/v1/**
         - id: brand-service
           uri: lb://brand-service
           predicates:
             - Path=/api/app/v1/brand/**
+        - id: app-service
+          uri: lb://app-service
+          predicates:
+            - Path=/api/app/v1/**    
