@@ -1,0 +1,14 @@
+server:
+  port: 8088
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          default-label: main
+          searchPaths: config-data
+          uri: https://github.com/URMART/configBikers
+          username: ${USER_GIT}
+          password: ${PASS_GIT}
+  application:
+    name: config-server
