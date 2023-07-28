@@ -6,6 +6,5 @@ import lombok.Data;
 public class Brand {
     private String id;
     private String nameBrand;
-
     private String originCountry;
 }

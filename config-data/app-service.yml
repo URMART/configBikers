@@ -19,8 +19,8 @@ appVersion: "1.0.0"
 
 feign:
   module:
-    mechanic: "localhost:8081/api/mechanic/v1"
-    brand: "localhost:8084/api/brand/v1"
+    mechanic: "localhost:8081/api/app/v1/mechanic"
+    brand: "localhost:8084/api/app/v1/brand"
 
 
 resilience4j.circuitbreaker:

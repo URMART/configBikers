@@ -17,4 +17,4 @@ eureka:
 
 feign:
   module:
-    brand: "localhost:8084/api/brand/v1"      
+    brand: "localhost:8084/api/app/v1/brand"      
