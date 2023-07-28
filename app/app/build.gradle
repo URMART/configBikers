@@ -50,8 +50,11 @@ dependencies {
 	//feingClient
 	implementation 'org.springframework.cloud:spring-cloud-starter-openfeign:3.1.6'
 
+	//documentation
 	implementation "org.springdoc:springdoc-openapi-ui:${openApiVersion}"
 	implementation "org.springdoc:springdoc-openapi-webflux-ui:${openApiVersion}"
+
+
 	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-aop', version: '2.5.0'
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	implementation 'org.springframework.cloud:spring-cloud-starter-circuitbreaker-resilience4j:2.1.0'

@@ -46,7 +46,7 @@ public class BikersHandlerImp implements IBikersHandler {
             Mechanic mechanic = clientFeingMechanic.getMechanicsForName(bikerRequestDto.getMechanic());
             bikerRequestDto.setMechanic(mechanic.getNameMechanical());
         }catch (Exception e) {
-            throw new BusinessException(e.getMessage(), "NOT_FOUND", HttpStatus.NOT_FOUND, false);
+            throw new BusinessException(e.getMessage(), "BAD_REQUEST", HttpStatus.BAD_REQUEST, false);
         }
         bikersServicePort.saveBiker(bikerRequestMapper.toBikers(bikerRequestDto));
     }

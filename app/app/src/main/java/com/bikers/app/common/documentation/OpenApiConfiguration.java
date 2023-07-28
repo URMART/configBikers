@@ -1,4 +1,4 @@
-package com.bikers.app.infraestructure.documentation;
+package com.bikers.app.common.documentation;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
