@@ -8,6 +8,8 @@ import com.mongo.mechanic.mongo.common.exeptions.BusinessException;
 import com.mongo.mechanic.mongo.common.exeptions.DomainExeptions;
 import com.mongo.mechanic.mongo.domain.api.IMechanicPortService;
 import com.mongo.mechanic.mongo.domain.model.Mechanic;
+import com.mongo.mechanic.mongo.infraestructura.ouput.feingclient.brands.feing.Brand;
+import com.mongo.mechanic.mongo.infraestructura.ouput.feingclient.brands.feing.ClienteFeingBrand;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
@@ -23,7 +25,7 @@ public class MechanicHandlerImp implements  IMechanicHandler{
 
     private final IMechanicPortService mechanicPortService;
     private final IMechanicResponseMapper mechanicResponseMapper;
-
+    private final ClienteFeingBrand clienteFeingBrand;
     private final IMechanicRequestMapper mechanicRequestMapper;
 
     @Override
@@ -43,6 +45,12 @@ public class MechanicHandlerImp implements  IMechanicHandler{
 
     @Override
     public void createMechanic(MechanicRequestDto mechanic) {
+        try {
+            Brand brand = clienteFeingBrand.getBransForName(mechanic.getSpecialSkillBrand());
+            mechanic.setSpecialSkillBrand(brand.getNameBrand());
+        }catch (Exception e) {
+            throw new BusinessException(e.getMessage(), "BAD_REQUEST", HttpStatus.BAD_REQUEST, false);
+        }
         mechanicPortService.createMechanic(mechanicRequestMapper.toMechanic(mechanic));
     }
 }

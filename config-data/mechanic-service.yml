@@ -14,3 +14,7 @@ eureka:
   client:
     serviceUrl:
       defaultZone:  http://localhost:8087/eureka/       
+
+feign:
+  module:
+    brand: "localhost:8084/api/brand/v1"      
